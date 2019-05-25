@@ -1,0 +1,25 @@
+{
+  "name": "node_js",
+  "version": "1.0.0",
+  "description": "node_js",
+  "main": "index.js",
+  "scripts": {
+    
+    "start": "node src",
+    "start:dev": "nodemon --watch src/ src/index.js"
+    
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ghehd231/node_js.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ghehd231/node_js/issues"
+  },
+  "homepage": "https://github.com/ghehd231/node_js#readme",
+  "dependencies": {
+    "koa": "^2.7.0"
+  }
+}

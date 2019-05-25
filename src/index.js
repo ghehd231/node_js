@@ -1,26 +1,33 @@
-//const test = require('../pratice');
+// const test = require('../pratice');
 
 const Koa = require('koa');
+const Router = require('koa-router');
+
 const app = new Koa();
+const router = new Router();
 
-
-app.use(async (ctx, next) => {
-  console.log(ctx.url);
-  console.log(1);
-  await next();
-  console.log('끝났다!');
+// router setting
+router.get('/', (ctx) => {
+  ctx.body = '홈';
 });
 
-app.use((ctx, next) => {
-  console.log(2);
-  next();
+router.get('/about/:name', (ctx) => {
+  const { name } = ctx.param;
+  ctx.body = `${name}의 소개`;
 });
 
-app.use((ctx, next) => {
-  console.log(3);
-  ctx.body = '안녕하세요 Koa!';
+router.get('/posts', (ctx) => {
+  const { id } = ctx.query;
+  if (id) {
+    ctx.body = `포스트 #${id}`;
+    return;
+  }
+  ctx.body = '선택된 포스트가 없습니다.';
 });
 
-app.listen(4000, () => {
-  console.log('Server is listening to port 4000');
+// 라우터를 앱에 적용
+app.use(router.routes()).use(router.allowedMethods());
+
+app.listen(3000, () => {
+  console.log('Server is listening to port 3000');
 });

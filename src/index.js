@@ -1,5 +1,8 @@
+//const test = require('../pratice');
+
 const Koa = require('koa');
 const app = new Koa();
+
 
 app.use(async (ctx, next) => {
   console.log(ctx.url);

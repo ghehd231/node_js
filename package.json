@@ -4,10 +4,8 @@
   "description": "node_js",
   "main": "index.js",
   "scripts": {
-    
     "start": "node src",
-    "start:dev": "nodemon --watch src/ src/index.js"
-    
+    "start:dev": "nodemon --watch src/ src"
   },
   "repository": {
     "type": "git",
@@ -21,5 +19,9 @@
   "homepage": "https://github.com/ghehd231/node_js#readme",
   "dependencies": {
     "koa": "^2.7.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "prettier-eslint": "^8.8.2"
   }
 }
